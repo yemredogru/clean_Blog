@@ -8,10 +8,19 @@
 </head>
 <body>
   <ul>
-    <% for(var i=0; i<photos.length; i++) {%>
-       <li><%= photos[i].title %></li>
-       <li><%= photos[i].detail %></li>
-    <% } %>
+    <% for(let i = 0; i < photos.length; i++) {%>
+      <div class="post-preview">
+        <a href="/posts/<%= photos[i]._id %>">
+          <h2 class="post-title">
+            <%= photos[i].title %>
+          </h2>
+          <h2 class="post-title">
+            <%= photos[i].detail %>
+          </h2>
+        </a>
+      </div>
+      <hr>
+      <% } %>
     </ul>
 </body>
 </html>

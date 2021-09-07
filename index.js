@@ -5,7 +5,7 @@ const photo=require('./model/photo');
 const path=require('path');
 require('dotenv').config({path:'relative/path/to/your/.env'})
 
-mongoose.connect(`mongodb+srv://yasaremre:@yasaremre.swwep.mongodb.net/cleanblog-test-db?retryWrites=true&w=majority`,{
+mongoose.connect(`mongodb+srv://yasaremre:159357qM**@yasaremre.swwep.mongodb.net/cleanblog-test-db?retryWrites=true&w=majority`,{
     useNewUrlParser: true
 })
 
@@ -30,4 +30,12 @@ app.post('/posts',async function(req,res){
     console.log(req.body)
     await photo.create(req.body);
     res.redirect('/add')
+})
+
+app.get('/posts/:id',async function(req,res){
+    const photos=await photo.findById(req.params.id)
+    console.log(photos)
+    res.render('photo',{
+        photos
+    })
 })
