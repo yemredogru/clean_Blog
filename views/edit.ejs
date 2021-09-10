@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="post-preview">
+    <h2 class="post-title">
+      <%= photos.title %>
+    </h2>
+    <h2 class="post-title">
+      <%= photos.detail %>
+    </h2>
+    <h2 class="post-title">
+      <%= photos.dateCreated %>
+    </h2>
+    <h2 class="post-title">
+      <img src="<%= photos.image %>" alt="">
+      <a href="/photos/edit/<%= photos._id %>?_method=GET">Update Photo</a>
+      <a href="/photos/<%= photos._id %>?_method=DELETE">Delete Photo</a>
+    </h2>
+    <div>
+
+    </div>
+</div>
+</body>
+</html>
